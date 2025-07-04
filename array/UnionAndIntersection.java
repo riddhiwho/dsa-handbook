@@ -24,13 +24,13 @@ public class UnionAndIntersection {
             }
         }
 
-        for (; i < nums1.length; ++i) {
+        for (; i < nums1.length; i++) {
             if (k == 0 || nums1[i] != result[k - 1]) {
                 result[k++] = nums1[i];
             }
         }
 
-        for (; j < nums2.length; ++j) {
+        for (; j < nums2.length; j++) {
             if (k == 0 || nums2[j] != result[k - 1]) {
                 result[k++] = nums2[j];
             }

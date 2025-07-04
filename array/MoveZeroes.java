@@ -4,13 +4,10 @@ public class MoveZeroes {
 
     public static int[] removeDupe(int[] nums){
         int writeIndex = 0;
-        int count=0;
         for(int readIndex = 0; readIndex<nums.length; readIndex++){
             if(nums[readIndex]!=0){
                 nums[writeIndex] = nums[readIndex];
                 writeIndex++;
-            }else{
-                count++;
             }
         }
         while (writeIndex<nums.length) {

@@ -28,9 +28,21 @@ public class RemoveDuplicatesInPlace {
         return Arrays.copyOfRange(nums, 0, writeIndex);
     }
 
+    public static int[] removeDupInPlace(int[] nums){
+        int writeIndex = 1;
+        for(int readIndex=1; readIndex<nums.length; readIndex++){
+            if(nums[readIndex]!=nums[readIndex-1]){
+                nums[writeIndex] = nums[readIndex];
+                writeIndex++;
+            }
+        }
+        return Arrays.copyOf(nums, writeIndex);
+    }
+
     public static void main(String[] args) {
         int[] nums = {1,1,2,2,2,2,3,4,4,5};
         // System.out.println(Arrays.toString(removeDupes(nums)));
-        System.out.println(Arrays.toString(removeDupe(nums)));
+        // System.out.println(Arrays.toString(removeDupe(nums)));
+        System.out.println(Arrays.toString(removeDupInPlace(nums)));
     }
 }
